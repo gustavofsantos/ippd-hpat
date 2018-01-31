@@ -1,0 +1,6 @@
+pacotes.rank.dat
+pacotes
+node_modules
+cache
+*.log
+

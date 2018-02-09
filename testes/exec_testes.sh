@@ -1,0 +1,1 @@
+python computar-testes.py

@@ -23,6 +23,9 @@ Operações fora do suporte do hpat utilizam as construções do
 próprio Python sem otimizações.
 """
 
+# ativa o modo multithread do hpat
+hpat.multithread_mode = True
+
 
 print("[{}] INICIO".format(time.asctime()[11:19]))
 
@@ -66,10 +69,10 @@ def extrair_info_linha(linha_split):
     if len(linha_split) > 4:
         descricao = ' '.join(linha_split[2:-1]) # sem a flag nopython=False não funciona
                                                 # numba não implementa o str.join
-        rank = int(linha_split[-1]) if len(linha_split[-1]) > 0 else 0
+        rank = int(linha_split[-1]) if len(linha_split[-1]) and linha_split[-1].isdecimal() > 0 else 0
     else:
         descricao = linha_split[2]
-        rank = int(linha_split[3]) if len(linha_split[3]) > 0 else 0
+        rank = int(linha_split[3]) if len(linha_split[3]) > 0 and linha_split[3].isdecimal() else 0
 
     return [nome, lista_pal_chave, descricao, rank]
 

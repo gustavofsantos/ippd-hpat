@@ -7,7 +7,7 @@ from functools import lru_cache
 
 print("[{}] INICIO".format(time.asctime()[11:19]))
 
-@lru_cache(maxsize=4096)
+@lru_cache(maxsize=524288)
 def pesquisar(termos, numero_itens):
     pacotes = {}
     linhas_relacionadas = []
@@ -74,9 +74,11 @@ def pesquisar(termos, numero_itens):
         pesquisar(termos)
 
 def main():
-    print("[{}] PROCESSANDO PESQUISA".format(time.asctime()[11:19]))
-
     pesq = ' '.join(sys.argv[1:])
+
+    print("[{}] PESQUISANDO POR: '{}'".format(time.asctime()[11:19], pesq))
+
+    print("[{}] PROCESSANDO PESQUISA".format(time.asctime()[11:19]))
 
     resultado = pesquisar(pesq, 10)
 

@@ -1,5 +1,7 @@
 # Repositório contendo a implementação para o trabalho 3 da disciplina de Introdução ao Processamento Paralelo e Distribuído.
 
+## Autores: Gustavo Santos, Eduardo Model
+
 Uma sequência de passos é necessária para a utilização da solução desenvolvida. Após clonar este repositório, deve ser baixado os pacotes do NojeJS necessários, bem como o arquivo de dados bruto. Esta etapa é completada ao executar o comando ```npm install``` na pasta raiz do projeto. Em seguida é necessário criar o cache, executando o comando ```python ./python/criar_cache.py```. Se não houver erros, o programa estará pronto para uso.
 
 
